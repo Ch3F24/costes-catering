@@ -37,6 +37,10 @@ class PageController extends BaseModuleController
         );
 
         $form->add(
+          Medias::make()->name('slider')->label('Slider')->max(10)
+        );
+
+        $form->add(
             BlockEditor::make()
         );
 

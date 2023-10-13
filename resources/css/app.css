@@ -39,10 +39,19 @@
     height: 14px;
     position: relative;
 }
-/*.toggler::before {*/
-/*    content: "";*/
-/*    border-top: 1px solid black;*/
-/*    position: absolute;*/
-/*    !*top: 7px;*!*/
-/*    width: 100%;*/
-/*}*/
+
+.content_with_image-content h1 {
+    @apply font-bold text-5xl sm:text-6xl md:text-7xl mb-4
+}
+.content_with_image-content h2 {
+    @apply font-bold text-4xl sm:text-5xl md:text-6xl mb-2.5
+}
+.content_with_image-content p {
+    @apply mb-4 font-light text-justify
+}
+.content_with_image-right .content_with_image-content {
+    @apply md:mr-8
+}
+.content_with_image-left .content_with_image-content {
+    @apply md:ml-8
+}

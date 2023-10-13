@@ -1,7 +1,13 @@
 @extends('site.layouts.app')
 
+@section('slider')
+    @if($page->hasImage('slider','desktop'))
+        @include('site.partials.slider', ['images' => $page->imagesAsArraysWithCrops('slider')])
+    @endif
+@endsection
+
 @section('content')
-    <h1 class="text-red-500">
-        {{ $page->title }}
-    </h1>
+    <main class="container lg:mb-8">
+        {!! $page->renderBlocks() !!}
+    </main>
 @endsection

@@ -9,7 +9,7 @@
                    @click="open = !open"
                    x-bind:class="{'border-b border-b-black border-b-2 md:border-b-0': open}">
 
-                    {{$link->title}}
+                    {{ $link->title }}
 
                     <span class="toggler md:hidden"
                           x-bind:class="{ 'open': open, 'close': !open }">
@@ -23,9 +23,9 @@
 
                     @foreach($link->children as $childLink)
                         <li>
-                            <a href="{{route('page.index', [$childLink->getRelated('page')->first()->slug])}}" class="text-black md:text-white">
+                            <a href="{{ pageLink($childLink) }}" class="text-black md:text-white">
 
-                                {{$childLink->title}}
+                                {{ $childLink->title }}
 
                             </a>
                         </li>
@@ -33,9 +33,9 @@
                 </ul>
             </div>
         @else
-            <a href="{{route('page.index', [$link->getRelated('page')->first()->slug])}}" class="text-black md:text-white font-bold">
+            <a href="{{ pageLink($link) }}" class="text-black md:text-white font-bold lg:font-normal">
 
-                {{$link->title}}
+                {{ $link->title }}
 
             </a>
         @endif
@@ -48,7 +48,7 @@
         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 
             @if($localeCode != LaravelLocalization::getCurrentLocale())
-                    <a class="text-black md:text-white font-bold"
+                    <a class="text-black md:text-white font-bold lg:font-normal"
                         rel="alternate"
                         hreflang="{{ $localeCode }}"
                         href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">

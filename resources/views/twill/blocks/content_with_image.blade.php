@@ -2,6 +2,12 @@
 @twillBlockIcon('text')
 @twillBlockGroup('app')
 
+<x-twill::input
+    name="id"
+    label="Id"
+    :maxlength="50"
+/>
+
 <x-twill::select
     name="position"
     label="Image position"
@@ -21,9 +27,8 @@
 />
 
 <x-twill::medias
-    name="slider"
-    label="Slide images"
-    :max="5"
+    name="cover"
+    label="cover"
 />
 
 <x-twill::wysiwyg
@@ -31,6 +36,7 @@
     label="Content"
     placeholder="Content"
     :toolbar-options="[
+        [ 'header' => [1, 2, false] ],
         'bold',
         'italic',
         ['list' => 'bullet'],

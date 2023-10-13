@@ -16,12 +16,15 @@ class Navigation extends Model implements Sortable
     protected $fillable = [
         'published',
         'title',
+        'type',
+        'url',
         'position',
     ];
 
     public $translatedAttributes = [
         'title',
         'active',
+        'url',
     ];
 
 }

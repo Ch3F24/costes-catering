@@ -13,6 +13,7 @@ class CreateNavigationsTables extends Migration
             createDefaultTableFields($table);
 
             $table->integer('position')->unsigned()->nullable();
+            $table->string('type',5)->nullable();
 
             // add those 2 columns to enable publication timeframe fields (you can use publish_start_date only if you don't need to provide the ability to specify an end date)
             // $table->timestamp('publish_start_date')->nullable();
@@ -25,6 +26,8 @@ class CreateNavigationsTables extends Migration
         Schema::create('navigation_translations', function (Blueprint $table) {
             createDefaultTranslationsTableFields($table, 'navigation');
             $table->string('title', 200)->nullable();
+            $table->string('url',255)->nullable();
+
         });
 
 

@@ -28,7 +28,7 @@ class PageController extends Controller
             $page = TwillAppSettings::get('homepage.homepage.page')->first();
 
             if ($page->published) {
-                return view('site.pages.view', ['page' => $page]);
+                return view('site.pages.home', ['page' => $page]);
             }
         }
 

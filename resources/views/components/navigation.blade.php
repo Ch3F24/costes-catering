@@ -1,4 +1,5 @@
-<nav class="px-4 fixed z-50 top-0 w-full grid grid-cols-5 md:block items-center transition-all duration-[175ms] ease-in-out border-b border-b-white pb-2"
+{{--border-b border-b-white--}}
+<nav class="px-4 absolute z-50 top-0 w-full grid grid-cols-5 md:block items-center transition-all duration-[175ms] ease-in-out pb-2 bg-gray-700/25"
      x-data="{ show: false}"
      x-bind:class="{ 'bg-white md:bg-transparent': show  }">
 
@@ -12,7 +13,7 @@
     </div>
 
         <div class="nav-brand w-52 mx-auto md:mb-4 col-span-3">
-            <a href="">
+            <a href="{{ route('frontend.home') }}">
                 <img src="{{ asset('assets/images/logo.jpg') }}" alt="Costes catering logo">
             </a>
         </div>

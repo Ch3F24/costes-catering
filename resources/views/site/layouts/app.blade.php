@@ -19,12 +19,10 @@
     <body>
         <header class="h-screen w-screen">
             <x-navigation />
-            @include('site.partials.slider')
+            @yield('slider')
         </header>
 
-
-{{--        @yield('content')--}}
-
+        @yield('content')
 
     </body>
 </html>
