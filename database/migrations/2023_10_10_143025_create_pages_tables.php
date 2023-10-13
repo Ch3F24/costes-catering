@@ -17,9 +17,8 @@ class CreatePagesTables extends Migration
             createDefaultTranslationsTableFields($table, 'page');
             $table->string('title', 200)->nullable();
             $table->text('description')->nullable();
-            $table->text('seo_title')->nullable();
+            $table->text('seo_keywords')->nullable();
             $table->text('seo_description')->nullable();
-            $table->text('keywords')->nullable();
         });
 
         Schema::create('page_slugs', function (Blueprint $table) {

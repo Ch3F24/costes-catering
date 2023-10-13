@@ -1,9 +1,10 @@
-<div @class([
-    'md:flex mt-24',
-    'content_with_image-right flex-row-reverse' => $block->input('position') == 'right',
-    'content_with_image-left' => $block->input('position') == 'left'
+<div data-block="{{'contentWithImage-' . $block->id}}"
+     @class([
+        'md:flex mt-24',
+        'content_with_image-right flex-row-reverse' => $block->input('position') == 'right',
+        'content_with_image-left' => $block->input('position') == 'left'
     ])
-     data-block="contentWithImage" @if($block->input('id')) id="{{ $block->input('id') }}" @endif>
+     @if($block->input('id')) id="{{ $block->input('id') }}" @endif>
     <div class="w-full md:w-3/5">
         @if($block->hasImage('cover','desktop'))
             <picture>

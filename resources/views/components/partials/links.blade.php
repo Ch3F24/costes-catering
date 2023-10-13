@@ -18,7 +18,7 @@
                 </p>
 
                 <ul x-show="open"
-                    class="ml-4 mt-4 md:ml-0 md:absolute top-full left-0 max-w-xs w-full"
+                    class="ml-4 mt-4 md:ml-0 md:absolute top-full left-0 max-w-xs w-full min-w-[200px]"
                     x-transition>
 
                     @foreach($link->children as $childLink)

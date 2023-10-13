@@ -41,6 +41,14 @@ return [
                     'ratio' => 1,
                 ]
             ]
+        ],
+        'seo_cover' => [
+            'seo' => [
+                [
+                    'name' => 'seo',
+                    'ratio' => 1,
+                ]
+            ]
         ]
     ]
 ];

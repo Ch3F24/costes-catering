@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use A17\Twill\Repositories\SettingRepository;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use A17\Twill\Facades\TwillNavigation;
 use A17\Twill\Facades\TwillAppSettings;
@@ -33,6 +35,15 @@ class AppServiceProvider extends ServiceProvider
             SettingsGroup::make()->name('homepage')->label('Homepage')
         );
 
+        if (Schema::hasTable('twill_settings')) {
+            $site_keywords = str_replace(';',', ',app(SettingRepository::class)->byKey('keywords'));
+            $site_description = app(SettingRepository::class)->byKey('meta_description');
+        }
+
+        view()->share([
+            'site_keywords' => $site_keywords ?? null,
+            'site_description' => $site_description ?? null
+        ]);
 
     }
 }

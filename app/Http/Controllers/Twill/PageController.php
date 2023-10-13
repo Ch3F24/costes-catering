@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Twill;
 
 use A17\Twill\Models\Contracts\TwillModelContract;
+use A17\Twill\Services\Forms\Fields\Tags;
+use A17\Twill\Services\Forms\Fieldset;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
 use A17\Twill\Services\Forms\Fields\Input;
@@ -32,9 +34,9 @@ class PageController extends BaseModuleController
     {
         $form = parent::getForm($model);
 
-        $form->add(
-            Input::make()->name('description')->label('Description')->translatable()
-        );
+//        $form->add(
+//            Input::make()->name('description')->label('Description')->translatable()
+//        );
 
         $form->add(
           Medias::make()->name('slider')->label('Slider')->max(10)
@@ -43,6 +45,16 @@ class PageController extends BaseModuleController
         $form->add(
             BlockEditor::make()
         );
+
+        $form->addFieldset(
+            Fieldset::make()->title('Seo')->id('seo')->fields([
+                Input::make()->name('seo_keywords')->label('Kulcsszavak')->translatable()->note('Pontosvesszővel elválasztva lehet többet megadni.'),
+                Input::make()->name('seo_description')->label('Seo Description')->translatable()->maxLength(156),
+                Medias::make()->name('seo_cover')->label('Seo image')
+
+            ])
+        );
+
 
         return $form;
     }
