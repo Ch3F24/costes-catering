@@ -1,5 +1,9 @@
 {{--border-b border-b-white--}}
-<nav class="px-4 absolute z-50 top-0 w-full grid grid-cols-5 md:block items-center transition-all duration-[175ms] ease-in-out pb-2 bg-gray-700/25"
+<nav @class([
+        'relative' => $relative,
+        'absolute top-0' => !$relative ,
+        'px-4 z-50 w-full grid grid-cols-5 md:block items-center transition-all duration-[175ms] ease-in-out pb-2'
+    ])
      x-data="{ show: false}"
      x-bind:class="{ 'bg-white md:bg-transparent': show  }">
 
@@ -12,25 +16,32 @@
         </svg>
     </div>
 
-        <div class="nav-brand w-52 mx-auto md:mb-4 col-span-3">
-            <a href="{{ route('frontend.home') }}">
-                <img src="{{ asset('assets/images/logo.jpg') }}" alt="Costes catering logo">
-            </a>
-        </div>
-        {{--Mobile menu--}}
-        <ul class="bg-white w-full absolute top-full left-0 md:hidden md:flex md:flex-row md:flex-nowrap md:justify-center md:px-0"
-            x-show="show"
-            @click.outside="show = false"
-            x-transition
-            x-transition:enter.duration.150ms
-            x-transition:leave.duration.150ms>
-            @include('components.partials.links')
-        </ul>
+    <div class="nav-brand w-52 mx-auto md:mb-4 col-span-3">
+        <a href="{{ route('frontend.home') }}">
+            <img src="{{ asset('assets/images/logo.png') }}" alt="Costes catering logo">
+        </a>
+    </div>
 
-        {{--Desktop menu--}}
+    {{--Mobile menu--}}
+    <ul class="bg-white w-full absolute top-full left-0 md:hidden md:flex md:flex-row md:flex-nowrap md:justify-center md:px-0"
+        x-show="show"
+        @click.outside="show = false"
+        x-transition
+        x-transition:enter.duration.150ms
+        x-transition:leave.duration.150ms>
+        @include('components.partials.links',[
+            'linkColor' => $relative ? 'text-black' : 'text-black md:text-white',
+            'relative' => $relative
+        ])
+    </ul>
+
+    {{--Desktop menu--}}
+    <div class="flex items-center justify-center">
         <ul class="hidden px-5 md:flex md:flex-row md:flex-nowrap md:justify-center md:px-0">
-            @include('components.partials.links')
+            @include('components.partials.links',[
+                'linkColor' => $relative ? 'text-black' : 'text-black md:text-white',
+                'relative' => $relative
+            ])
         </ul>
-
-
+    </div>
 </nav>

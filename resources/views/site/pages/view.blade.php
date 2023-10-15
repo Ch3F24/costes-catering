@@ -4,14 +4,17 @@
     @include('site.partials.meta',['meta' => $page])
 @endsection
 
-@section('slider')
-    @if($page->hasImage('slider','desktop'))
-        @include('site.partials.slider', ['images' => $page->imagesAsArraysWithCrops('slider')])
-    @endif
+@section('header')
+
+    @include('site.partials.header')
+
 @endsection
 
+
 @section('content')
-    <main class="container lg:mb-8">
-        {!! $page->renderBlocks() !!}
-    </main>
+    @if(count($page->blocks))
+        <main class="container lg:mb-8">
+            {!! $page->renderBlocks() !!}
+        </main>
+    @endif
 @endsection

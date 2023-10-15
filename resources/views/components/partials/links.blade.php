@@ -5,9 +5,9 @@
         @if(count($link->children))
             <div x-data="{ open: false}" class="relative">
 
-                <p class="text-black md:text-white flex justify-between items-center relative font-bold"
+                <p class="{{ $linkColor }} flex justify-between items-center relative cursor-pointer"
                    @click="open = !open"
-                   x-bind:class="{'border-b border-b-black border-b-2 md:border-b-0': open}">
+                   x-bind:class="{'border-b border-b-black border-b-2 md:border-b-white': open}">
 
                     {{ $link->title }}
 
@@ -18,12 +18,16 @@
                 </p>
 
                 <ul x-show="open"
-                    class="ml-4 mt-4 md:ml-0 md:absolute top-full left-0 max-w-xs w-full min-w-[200px]"
-                    x-transition>
+                    @class([
+                        'ml-4 mt-4 md:ml-0 md:absolute top-full left-0 max-w-xs w-full min-w-[300px] space-y-3',
+                        'bg-white p-4 rounded-xl' => $relative
+                    ])
+                    @click.outside="open = false"
+                    x-transition >
 
                     @foreach($link->children as $childLink)
                         <li>
-                            <a href="{{ pageLink($childLink) }}" class="text-black md:text-white">
+                            <a href="{{ pageLink($childLink) }}" class="{{ $linkColor }}">
 
                                 {{ $childLink->title }}
 
@@ -33,7 +37,7 @@
                 </ul>
             </div>
         @else
-            <a href="{{ pageLink($link) }}" class="text-black md:text-white font-bold lg:font-normal">
+            <a href="{{ pageLink($link) }}" class="{{ $linkColor }} font-bold lg:font-normal">
 
                 {{ $link->title }}
 
@@ -48,7 +52,7 @@
         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 
             @if($localeCode != LaravelLocalization::getCurrentLocale())
-                    <a class="text-black md:text-white font-bold lg:font-normal"
+                    <a class="{{ $linkColor }} font-bold lg:font-normal"
                         rel="alternate"
                         hreflang="{{ $localeCode }}"
                         href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">

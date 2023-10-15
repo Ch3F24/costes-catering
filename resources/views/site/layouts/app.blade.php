@@ -18,10 +18,7 @@
 
     </head>
     <body>
-        <header class="h-screen w-screen">
-            <x-navigation />
-            @yield('slider')
-        </header>
+        @yield('header')
 
         @yield('content')
 
