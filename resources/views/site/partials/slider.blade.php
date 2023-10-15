@@ -10,7 +10,7 @@
                          loading="lazy"
                          alt="" />
                 </picture>
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                <div class="swiper-lazy-preloader"></div>
             </div>
         @endforeach
     </div>
