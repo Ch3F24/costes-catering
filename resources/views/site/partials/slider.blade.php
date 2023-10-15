@@ -1,7 +1,7 @@
 <div class="swiper">
     <div class="swiper-wrapper">
         @foreach($images as $image)
-            <div class="swiper-slide bg-red-500">
+            <div class="swiper-slide">
                 <picture class="h-full">
                     <source media="(max-width: 768px)" srcset="{{ addImageParams($image['mobile']['src'],['w' => 768]) }}" />
                     <source media="(max-width: 1024px)" srcset="{{ addImageParams($image['tablet']['src'],['w' => 1280]) }}" />
