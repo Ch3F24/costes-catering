@@ -8,7 +8,7 @@
                     <img src="{{ addImageParams($image['desktop']['src'],['w' => 1650]) }}"
                          class="h-full"
                          loading="lazy"
-                         alt="Chris standing up holding his daughter Elva" />
+                         alt="" />
                 </picture>
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
