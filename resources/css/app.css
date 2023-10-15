@@ -58,3 +58,6 @@
 div[data-block] {
     @apply transition-all duration-500 opacity-0 -translate-y-60
 }
+.active {
+    @apply border-b border-b-current border-b-2;
+}

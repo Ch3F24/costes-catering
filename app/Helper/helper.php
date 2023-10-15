@@ -16,20 +16,28 @@ if (! function_exists('navLink')) {
     }
 }
 
-if (! function_exists('currentPage')) {
-    function currentPage($active,$parent = false, $default = 'nav-link')
+if (! function_exists('isActive')) {
+    function isActive($active,$parent = false): bool
     {
-        if (is_null(Route::current())) {
-            return $default;
-        }
-
         $slug = Route::current()->parameter('slug');
 
-        if ($slug && str_contains($slug,'/')) {
-            $slug = explode('/',$slug)[0];
-        }
+        if ($parent) {
+            foreach ($active->children as $children) {
+                foreach ($children->getRelated('page') as $page) {
+                    if ($slug == $page->slug) {
+                        return true;
+                    }
+                }
+            }
+        } else {
+            $page = $active->getRelated('page')->first();
 
-        return $slug === $active ? $default . ' active' : $default;
+            if ($page) {
+                return $slug === $page->slug;
+            }
+
+        }
+        return false;
     }
 }
 
@@ -65,9 +73,7 @@ if (!function_exists('addImageParams')) {
         parse_str($queryParams, $queries);
 
         foreach ($params as $key => $param) {
-//            if (array_key_exists($key,$queries)) {
-                $queries[$key] = $param;
-//            }
+            $queries[$key] = $param;
         }
 
         return $url['path'] . '?' . http_build_query($queries);

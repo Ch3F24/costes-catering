@@ -24,7 +24,6 @@ class Navigation extends Component
     {
         /** @var Navigation[] $links */
         $links = \App\Models\Navigation::published()->get()->toTree();
-        clock($links);
         return view('components.navigation', ['links' => $links]);
     }
 }
