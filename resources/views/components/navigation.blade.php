@@ -8,7 +8,7 @@
      x-bind:class="{ 'bg-white md:bg-transparent': show  }">
 
     <div class="mobil_menu-triggers md:hidden">
-        <svg x-show="!show" id="menu-show" class="text-white"  data-name="Outlined/UI/menu" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" @click="show = true">
+        <svg x-show="!show" id="menu-show" @class(['text-black' => $relative, 'text-white' => !$relative ,])  data-name="Outlined/UI/menu" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" @click="show = true">
             <path class="fill-current" d="M0,13.125V11.25H24.375v1.876ZM0,7.5V5.625H20.625V7.5ZM0,1.875V0H24.375V1.875Z" transform="translate(2.813 8.438)"></path>
         </svg>
         <svg x-show="show" id="menu-hide" class="text-black" data-name="Outlined/UI/close" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" @click="show = false">
