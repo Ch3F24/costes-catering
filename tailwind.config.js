@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
 export default {
   content: [
       "./resources/**/*.blade.php",
@@ -9,6 +10,9 @@ export default {
         container: {
           center: true,
           padding: "2rem"
+        },
+        fontFamily: {
+          sans: ['"Romek"', ...defaultTheme.fontFamily.sans]
         },
         extend: {
         },

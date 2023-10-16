@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Romek';
+    src: url('../../public/fonts/Romek/RomekSharp-Bold.otf'); /* IE9 Compat Modes */
+    src: url('../../public/fonts/Romek/RomekSharp-Bold.otf') format('opentype');
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Romek';
+    src: url('../../public/fonts/Romek/RomekSharp-Regular.otf'); /* IE9 Compat Modes */
+    src: url('../../public/fonts/Romek/RomekSharp-Regular.otf') format('opentype');
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Romek';
+    src: url('../../public/fonts/Romek/RomekSharp-Light.otf'); /* IE9 Compat Modes */
+    src: url('../../public/fonts/Romek/RomekSharp-Light.otf') format('opentype');
+    font-style: normal;
+    font-weight: 300;
+}
+
 .swiper {
     width: 100vw;
     height: 100vh;

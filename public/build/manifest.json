@@ -1,6 +1,18 @@
 {
+  "public/fonts/Romek/RomekSharp-Bold.otf": {
+    "file": "assets/RomekSharp-Bold-a6a5d7ad.otf",
+    "src": "public/fonts/Romek/RomekSharp-Bold.otf"
+  },
+  "public/fonts/Romek/RomekSharp-Light.otf": {
+    "file": "assets/RomekSharp-Light-99394418.otf",
+    "src": "public/fonts/Romek/RomekSharp-Light.otf"
+  },
+  "public/fonts/Romek/RomekSharp-Regular.otf": {
+    "file": "assets/RomekSharp-Regular-67e5d1f7.otf",
+    "src": "public/fonts/Romek/RomekSharp-Regular.otf"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-0331ff35.css",
+    "file": "assets/app-69f8ad1e.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },

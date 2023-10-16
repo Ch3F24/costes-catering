@@ -24,7 +24,7 @@
                 <ul x-show="open"
                     @class([
                         'ml-4 mt-4 md:ml-0 md:absolute top-full left-0 max-w-xs w-full min-w-[300px] space-y-3',
-                        'bg-white px-4 rounded-xl' => $relative,
+                        'bg-white p-4 rounded-xl' => $relative,
                     ])
                     @click.outside="open = false"
                     x-transition >
