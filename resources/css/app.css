@@ -83,3 +83,21 @@ div[data-block] {
 .active {
     @apply border-b border-b-current border-b-2;
 }
+.nav-open {
+    @apply bg-white md:bg-inherit
+}
+nav.transparent-nav {
+   @apply bg-transparent;
+}
+.transparent-nav #menu-show {
+    @apply text-white;
+}
+.nav-link {
+    @apply text-black transition-colors;
+}
+.transparent-nav .nav-link {
+    @apply text-black md:text-white;
+}
+.transparent-nav .dropdown-menu ul {
+    @apply bg-transparent
+}

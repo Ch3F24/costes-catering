@@ -3,10 +3,10 @@
     <li class="py-3 px-5 md:py-0">
 
         @if(count($link->children))
-            <div x-data="{ open: false}" class="relative">
+            <div x-data="{ open: false}" class="relative dropdown-menu">
 
                 <p @class([
-                        $linkColor,
+                        'nav-link',
                         'flex justify-between items-center relative cursor-pointer',
                         'active' => isActive($link, true)
                     ])
@@ -23,8 +23,8 @@
 
                 <ul x-show="open"
                     @class([
-                        'ml-4 mt-4 md:ml-0 md:absolute top-full left-0 max-w-xs w-full min-w-[300px] space-y-3',
-                        'bg-white p-4 rounded-xl' => $relative,
+                        'ml-4 mt-4 md:ml-0 md:absolute top-full left-0 max-w-xs w-full min-w-[300px] space-y-3 bg-white p-4 rounded-xl',
+//                        'bg-white p-4 rounded-xl' => !$relative,
                     ])
                     @click.outside="open = false"
                     x-transition >
@@ -33,7 +33,7 @@
                         <li>
                             <a href="{{ pageLink($childLink) }}"
                                @class([
-                                    $linkColor,
+                                    'nav-link',
                                     'active' => isActive($childLink)
                                 ])>
 
@@ -47,7 +47,7 @@
         @else
             <a href="{{ pageLink($link) }}"
                @class([
-                    $linkColor,
+                    'nav-link',
                     'active' => isActive($link, true)
                ])>
 
@@ -64,7 +64,7 @@
         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 
             @if($localeCode != LaravelLocalization::getCurrentLocale())
-                    <a class="{{ $linkColor }} font-bold lg:font-normal"
+                    <a class="nav-link font-bold lg:font-normal"
                         rel="alternate"
                         hreflang="{{ $localeCode }}"
                         href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">

@@ -12,7 +12,8 @@ class Navigation extends Component
      * Create a new component instance.
      */
     public function __construct(
-      public bool $relative
+        public bool $transparent,
+        public bool $slider
     ) {
         //
     }

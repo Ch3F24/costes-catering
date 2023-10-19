@@ -45,3 +45,14 @@ document.querySelectorAll(target).forEach((i) => {
         observer.observe(i);
     }
 });
+
+const nav = document.querySelector('nav');
+window.addEventListener('scroll',function () {
+    if (window.scrollY > 100) {
+        nav.classList.remove('transparent-nav')
+    } else {
+        if (nav.hasAttribute('data-nav')) {
+            nav.classList.add('transparent-nav')
+        }
+    }
+})
