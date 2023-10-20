@@ -59,7 +59,7 @@
     </li>
 
 @endforeach
-
+@if(count($links))
     <li class="py-5 px-5 md:py-0">
         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
 
@@ -77,3 +77,4 @@
         @endforeach
 
     </li>
+@endif
