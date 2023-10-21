@@ -36,7 +36,7 @@
     label="Content"
     placeholder="Content"
     :toolbar-options="[
-        [ 'header' => [1, 2, false] ],
+        [ 'header' => [1, 2, 3, 4, false] ],
         'bold',
         'italic',
         ['list' => 'bullet'],

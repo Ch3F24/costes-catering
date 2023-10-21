@@ -23,6 +23,20 @@
     font-style: normal;
     font-weight: 300;
 }
+@font-face {
+    font-family: 'Romek';
+    src: url('../../public/fonts/Romek/RomekSharp-BoldItalic.otf'); /* IE9 Compat Modes */
+    src: url('../../public/fonts/Romek/RomekSharp-BoldItalic.otf') format('opentype');
+    font-style: italic;
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Romek';
+    src: url('../../public/fonts/Romek/RomekSharp-RegularItalic.otf'); /* IE9 Compat Modes */
+    src: url('../../public/fonts/Romek/RomekSharp-RegularItalic.otf') format('opentype');
+    font-style: italic;
+    font-weight: 400;
+}
 
 .swiper {
     width: 100vw;
@@ -67,6 +81,12 @@
 }
 .content_with_image-content h2 {
     @apply font-bold text-4xl sm:text-5xl md:text-6xl mb-2.5
+}
+.content_with_image-content h3 {
+    @apply text-3xl md:text-4xl mb-2.5
+}
+.content_with_image-content h4 {
+    @apply text-2xl md:text-3xl mb-2.5
 }
 .content_with_image-content p {
     @apply mb-4 font-light text-justify

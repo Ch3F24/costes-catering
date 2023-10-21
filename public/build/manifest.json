@@ -3,6 +3,10 @@
     "file": "assets/RomekSharp-Bold-a6a5d7ad.otf",
     "src": "public/fonts/Romek/RomekSharp-Bold.otf"
   },
+  "public/fonts/Romek/RomekSharp-BoldItalic.otf": {
+    "file": "assets/RomekSharp-BoldItalic-dcd1504f.otf",
+    "src": "public/fonts/Romek/RomekSharp-BoldItalic.otf"
+  },
   "public/fonts/Romek/RomekSharp-Light.otf": {
     "file": "assets/RomekSharp-Light-99394418.otf",
     "src": "public/fonts/Romek/RomekSharp-Light.otf"
@@ -11,8 +15,12 @@
     "file": "assets/RomekSharp-Regular-67e5d1f7.otf",
     "src": "public/fonts/Romek/RomekSharp-Regular.otf"
   },
+  "public/fonts/Romek/RomekSharp-RegularItalic.otf": {
+    "file": "assets/RomekSharp-RegularItalic-34224c10.otf",
+    "src": "public/fonts/Romek/RomekSharp-RegularItalic.otf"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-6a4acbf3.css",
+    "file": "assets/app-0ffb7a73.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },

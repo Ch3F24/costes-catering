@@ -43,7 +43,7 @@ class PageController extends BaseModuleController
         );
 
         $form->add(
-            BlockEditor::make()
+            BlockEditor::make()->blocks(['text','content_with_image'])
         );
 
         $form->addFieldset(
