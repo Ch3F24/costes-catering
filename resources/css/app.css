@@ -78,7 +78,7 @@
     @apply md:ml-8
 }
 div[data-block] {
-    @apply transition-all duration-500 opacity-0 -translate-y-60
+    @apply transition-all duration-500 opacity-0 -translate-y-10
 }
 .active {
     @apply border-b border-b-current border-b-2;
@@ -101,3 +101,6 @@ nav.transparent-nav {
 .transparent-nav .dropdown-menu ul {
     @apply bg-transparent
 }
+/*nav {*/
+/*    @apply min-h-[81px] md:min-h-[121px]*/
+/*}*/
