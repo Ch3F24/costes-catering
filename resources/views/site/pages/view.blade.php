@@ -10,7 +10,6 @@
 
 @endsection
 
-
 @section('content')
     @if(count($page->blocks))
         <main class="container lg:mb-8" id="app">

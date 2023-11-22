@@ -40,7 +40,13 @@ return [
                     'name' => 'tablet',
                     'ratio' => 1,
                 ]
-            ]
+            ],
+            'default' => [
+                [
+                    'name' => 'default',
+                    'ratio' => null,
+                ],
+            ],
         ],
         'seo_cover' => [
             'seo' => [
