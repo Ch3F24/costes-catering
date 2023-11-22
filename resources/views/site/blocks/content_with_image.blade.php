@@ -5,7 +5,8 @@
         'content_with_image-left' => $block->input('position') == 'left'
     ])
      @if($block->input('id')) id="{{ $block->input('id') }}" @endif>
-    <div class="w-full md:w-3/5">
+
+    <div class="w-full md:w-3/5 relative">
         @if($block->hasImage('cover','desktop'))
             <picture>
                 <source media="(max-width: 768px)" srcset="{{ $block->image('cover', 'mobile',['w' => 768]) }}" />
@@ -15,9 +16,21 @@
                      loading="lazy"
                      alt="Chris standing up holding his daughter Elva" />
             </picture>
+            @if($block->hasImage('gallery','default'))
+                <Gallery
+                    photo-number="{{ count($block->images('gallery','default')) }}"
+                    photo-props="{{ json_encode($block->imagesAsArrays('gallery','default')) }}">
+                </Gallery>
+            @endif
         @endif
     </div>
     <div class="w-full md:w-3/5 lg:w-2/5 mt-10 md:mt-0 content_with_image-content">
         {!! $block->translatedinput('content') !!}
     </div>
 </div>
+
+@if($block->hasImage('gallery','default'))
+    @pushOnce('scripts')
+        @vite('resources/js/gallery.js')
+    @endPushOnce
+@endif

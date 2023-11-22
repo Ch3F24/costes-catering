@@ -49,6 +49,13 @@ return [
                     'ratio' => 1,
                 ]
             ]
+        ],
+        'gallery' => [
+            'default' => [
+                [
+                    'name' => 'default',
+                ]
+            ]
         ]
     ]
 ];

@@ -2,10 +2,15 @@
 @twillBlockIcon('text')
 @twillBlockGroup('app')
 
-<x-twill::input
-    name="id"
-    label="Id"
-    :maxlength="50"
+{{--<x-twill::input--}}
+{{--    name="id"--}}
+{{--    label="Id"--}}
+{{--    :maxlength="50"--}}
+{{--/>--}}
+
+<x-twill::medias
+    name="cover"
+    label="cover"
 />
 
 <x-twill::select
@@ -23,13 +28,19 @@
         ],
     ]"
     default="left"
+/>
 
+<x-twill::checkbox
+    name="is_vertical"
+    label="Vertical image"
 />
 
 <x-twill::medias
-    name="cover"
-    label="cover"
+    name="gallery"
+    label="Gallery"
+    :max="15"
 />
+
 
 <x-twill::wysiwyg
     name="content"
