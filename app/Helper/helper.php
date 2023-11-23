@@ -79,3 +79,22 @@ if (!function_exists('addImageParams')) {
         return $url['path'] . '?' . http_build_query($queries);
     }
 }
+
+if (! function_exists('getImages')) {
+    function getImages($model,$role, $crop = 'default')
+    {
+        $medias = $model->medias->filter(function ($media) use ($role, $crop) {
+            return $media->pivot->role === $role && $media->pivot->crop === $crop;
+        });
+
+        $arrays = [];
+
+        foreach ($medias as $key => $media) {
+            $arrays[$key] = $model->imageAsArray($role, 'default');
+            if ($media->getMetadata('youtube_url')) {
+                $arrays[$key]['youtube_url'] = $media->getMetadata('youtube_url');
+            }
+        }
+        return $arrays;
+    }
+}

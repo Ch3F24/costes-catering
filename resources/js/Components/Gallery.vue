@@ -11,7 +11,10 @@
     <Modal v-if="open" @close="closeModal()">
         <flickity ref="flickity" :options="options" class="w-full gallery-slider">
             <div class="carousel-cell" v-for="(photo,index) in photos">
-                <img :data-flickity-lazyload="photo.src" :alt="photo.alt" loading=lazy :key="index">
+                <div v-if="photo.youtube_url" class="relative h-0 overflow-hidden max-w-full w-full" style="padding-bottom: 56.25%;">
+                    <iframe :src="getEmbedUrl(photo.youtube_url)" class="absolute top-0 left-0 w-full h-full"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <img :data-flickity-lazyload="photo.src" :alt="photo.alt" loading=lazy :key="index" v-else>
             </div>
         </flickity>
     </Modal>
@@ -21,6 +24,7 @@
 <script>
 import Flickity from './Flickity.vue';
 import Modal from "./Modal.vue";
+import { getIdFromURL } from 'vue-youtube-embed'
 
 const body = document.body
 export default {
@@ -36,6 +40,9 @@ export default {
         },
         photoProps: {
             required: true
+        },
+        photoObject: {
+            required: false
         }
     },
     data() {
@@ -54,7 +61,6 @@ export default {
     },
     mounted() {
         this.photos = JSON.parse(this.photoProps)
-
     },
     methods: {
         openModal() {
@@ -64,6 +70,9 @@ export default {
         closeModal() {
             this.open = false
             body.style.overflow = 'auto'
+        },
+        getEmbedUrl(url) {
+            return "https://www.youtube.com/embed/" + getIdFromURL(url);
         }
     }
 }

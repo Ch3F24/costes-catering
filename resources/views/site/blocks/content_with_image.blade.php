@@ -28,7 +28,7 @@
             @if($block->hasImage('gallery','default'))
                 <Gallery
                     photo-number="{{ count($block->images('gallery','default')) }}"
-                    photo-props="{{ json_encode($block->imagesAsArrays('gallery','default')) }}">
+                    photo-props="{{ json_encode(getImages($block,'gallery')) }}">
                 </Gallery>
             @endif
         @endif

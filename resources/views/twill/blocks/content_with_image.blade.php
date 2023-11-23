@@ -8,6 +8,17 @@
 {{--    :maxlength="50"--}}
 {{--/>--}}
 
+@php
+    $extraMetadata = [
+        [
+            'name' => 'youtube_url',
+            'label' => 'Youtube url',
+            'type' => 'text',
+            'wysiwyg' => false,
+        ],
+    ];
+@endphp
+
 <x-twill::medias
     name="cover"
     label="cover"
@@ -39,6 +50,8 @@
     name="gallery"
     label="Gallery"
     :max="15"
+    withVideoUrl="true"
+    :extra-metadatas="$extraMetadata"
 />
 
 
