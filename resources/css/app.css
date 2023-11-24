@@ -124,3 +124,9 @@ nav.transparent-nav {
 /*nav {*/
 /*    @apply min-h-[81px] md:min-h-[121px]*/
 /*}*/
+.laravel-embed__responsive-wrapper {
+    @apply relative h-0 overflow-hidden max-w-full w-full;
+}
+.laravel-embed__responsive-wrapper iframe {
+    @apply absolute top-0 left-0 w-full h-full
+}

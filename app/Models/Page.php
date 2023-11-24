@@ -17,7 +17,8 @@ class Page extends Model
         'published',
         'title',
         'description',
-        'transparent_nav'
+        'transparent_nav',
+        'youtube'
     ];
 
     public $translatedAttributes = [

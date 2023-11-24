@@ -39,11 +39,15 @@ class PageController extends BaseModuleController
         );
 
         $form->add(
+            Input::make()->name('youtube')->label('Youtube url')->type('url')
+        );
+
+        $form->add(
           Medias::make()->name('slider')->label('Slider')->max(10)
         );
 
         $form->add(
-            BlockEditor::make()->blocks(['text','content_with_image'])
+            BlockEditor::make()->blocks(['text','content_with_image','content_with_video'])
         );
 
         $form->addFieldset(
