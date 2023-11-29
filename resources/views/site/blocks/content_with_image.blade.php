@@ -6,7 +6,7 @@
     ])
      @if($block->input('id')) id="{{ $block->input('id') }}" @endif>
 
-    <div class="w-full md:w-3/5 relative flex justify-center">
+    <div class="w-full md:w-3/5 relative flex justify-center items-start">
         @if($block->hasImage('cover','desktop'))
             <div class="relative">
                 <picture>
