@@ -20,7 +20,7 @@
     "src": "public/fonts/Romek/RomekSharp-RegularItalic.otf"
   },
   "resources/css/app.css": {
-    "file": "assets/app-6569e239.css",
+    "file": "assets/app-99841b43.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
@@ -44,7 +44,7 @@
     "css": [
       "assets/gallery-4e1aef68.css"
     ],
-    "file": "assets/gallery-f7a0ffd4.js",
+    "file": "assets/gallery-4be85ac3.js",
     "isEntry": true,
     "src": "resources/js/gallery.js"
   }

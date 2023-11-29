@@ -130,3 +130,17 @@ nav.transparent-nav {
 .laravel-embed__responsive-wrapper iframe {
     @apply absolute top-0 left-0 w-full h-full
 }
+
+
+/*Gallery*/
+
+.gallery-slider .flickity-prev-next-button.next {
+    @apply md:-right-8;
+}
+.gallery-slider .flickity-prev-next-button.previous {
+    @apply md:-left-8
+}
+.gallery-slider .flickity-prev-next-button:focus {
+    outline: none;
+    box-shadow: none;
+}

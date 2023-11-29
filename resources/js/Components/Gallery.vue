@@ -14,7 +14,7 @@
                 <div v-if="photo.youtube_url" class="relative h-0 overflow-hidden max-w-full w-full" style="padding-bottom: 56.25%;">
                     <iframe :src="getEmbedUrl(photo.youtube_url)" class="absolute top-0 left-0 w-full h-full"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-                <img :data-flickity-lazyload="photo.src" :alt="photo.alt" loading=lazy :key="index" v-else>
+                <img :data-flickity-lazyload="photo.src" :alt="photo.alt" loading=lazy :key="index" v-else class="h-full max-h-full md:max-w-none object-contain">
             </div>
         </flickity>
     </Modal>
@@ -49,7 +49,7 @@ export default {
         return {
             options: {
                 initialIndex: 0,
-                prevNextButtons: false,
+                prevNextButtons: true,
                 pageDots: true,
                 wrapAround: true,
                 lazyLoad: true
@@ -107,5 +107,4 @@ export default {
     justify-content: center;
     align-items: center;
 }
-
 </style>

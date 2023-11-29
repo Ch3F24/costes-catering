@@ -90,11 +90,12 @@ if (! function_exists('getImages')) {
         $arrays = [];
 
         foreach ($medias as $key => $media) {
-            $arrays[$key] = $model->imageAsArray($role, 'default');
+            $arrays[$key] = $model->imageAsArray($role, $crop,[],$media);
             if ($media->getMetadata('youtube_url')) {
                 $arrays[$key]['youtube_url'] = $media->getMetadata('youtube_url');
             }
         }
+
         return $arrays;
     }
 }
