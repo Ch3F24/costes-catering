@@ -19,15 +19,15 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 //    return view('welcome');
 //});
 Route::group([
-
     'prefix' => LaravelLocalization::setLocale(),
-
     'middleware' => ['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
-
 ], function () {
 
     Route::get('/', [PageController::class, 'home'])->name('frontend.home');
-    Route::get('{slug}', [PageController::class, 'show'])->name('page.index');
+    Route::get(
+        LaravelLocalization::transRoute('routes.page'),
+        [PageController::class, 'show']
+    )->name('page.index');
 
 });
 

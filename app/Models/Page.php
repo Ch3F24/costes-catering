@@ -8,8 +8,10 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Model;
+use App\Repositories\PageRepository;
+use Mcamara\LaravelLocalization\Interfaces\LocalizedUrlRoutable;
 
-class Page extends Model
+class Page extends Model implements LocalizedUrlRoutable
 {
     use HasBlocks, HasTranslation, HasSlug, HasMedias, HasRevisions;
 
@@ -32,5 +34,19 @@ class Page extends Model
     public $slugAttributes = [
         'title',
     ];
+
+    public function resolveRouteBinding($slug, $field = null)
+    {
+        $page = app(PageRepository::class)->forSlug($slug);
+
+        abort_if(!$page,404);
+
+        return $page;
+    }
+
+    public function getLocalizedRouteKey($locale)
+    {
+        return $this->getSlug($locale);
+    }
 
 }

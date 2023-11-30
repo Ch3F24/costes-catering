@@ -9,16 +9,9 @@ use Illuminate\Contracts\View\View;
 
 class PageController extends Controller
 {
-    public function show(string $slug, PageRepository $pageRepository): View
+    public function show(Page $page): View
     {
-        $page = $pageRepository->forSlug($slug);
-
-        if (!$page) {
-            abort(404);
-        }
-
         return view('site.pages.view', ['page' => $page]);
-
     }
 
     public function home(): View
